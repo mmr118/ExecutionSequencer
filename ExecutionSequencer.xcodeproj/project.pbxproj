@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD5CDF2423ECBC4D00C36648 /* ExecutionSequenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF2323ECBC4D00C36648 /* ExecutionSequenceable.swift */; };
+		DD5CDF2623ECBC8900C36648 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF2523ECBC8900C36648 /* Typealiases.swift */; };
+		DD5CDF2A23ECBEE900C36648 /* ExecutionSequenceIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF2923ECBEE900C36648 /* ExecutionSequenceIterator.swift */; };
+		DD5CDF2C23ECC5B200C36648 /* ExecutionSequenceIterator+DebugOutputStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF2B23ECC5B200C36648 /* ExecutionSequenceIterator+DebugOutputStrategy.swift */; };
+		DD5CDF2E23ECC68F00C36648 /* SequenceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF2D23ECC68F00C36648 /* SequenceState.swift */; };
+		DD5CDF3023ECD3D800C36648 /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF2F23ECD3D800C36648 /* TODO.swift */; };
+		DD5CDF3423ECD48D00C36648 /* ExecutionSequenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF3323ECD48D00C36648 /* ExecutionSequenceError.swift */; };
+		DD5CDF3E23ECD5C100C36648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF3D23ECD5C100C36648 /* AppDelegate.swift */; };
+		DD5CDF4023ECD5C100C36648 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF3F23ECD5C100C36648 /* SceneDelegate.swift */; };
+		DD5CDF4223ECD5C100C36648 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF4123ECD5C100C36648 /* ViewController.swift */; };
+		DD5CDF4523ECD5C100C36648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5CDF4323ECD5C100C36648 /* Main.storyboard */; };
+		DD5CDF4723ECD5C400C36648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD5CDF4623ECD5C400C36648 /* Assets.xcassets */; };
+		DD5CDF4A23ECD5C400C36648 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5CDF4823ECD5C400C36648 /* LaunchScreen.storyboard */; };
+		DD5CDF5023ECDAEE00C36648 /* SomeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF4F23ECDAEE00C36648 /* SomeAction.swift */; };
 		DDD2535523ECA28C00282162 /* ExecutionSequencer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD2534B23ECA28C00282162 /* ExecutionSequencer.framework */; };
 		DDD2535A23ECA28C00282162 /* ExecutionSequencerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD2535923ECA28C00282162 /* ExecutionSequencerTests.swift */; };
 		DDD2535C23ECA28C00282162 /* ExecutionSequencer.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD2534E23ECA28C00282162 /* ExecutionSequencer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +37,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD5CDF2323ECBC4D00C36648 /* ExecutionSequenceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionSequenceable.swift; sourceTree = "<group>"; };
+		DD5CDF2523ECBC8900C36648 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		DD5CDF2923ECBEE900C36648 /* ExecutionSequenceIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionSequenceIterator.swift; sourceTree = "<group>"; };
+		DD5CDF2B23ECC5B200C36648 /* ExecutionSequenceIterator+DebugOutputStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExecutionSequenceIterator+DebugOutputStrategy.swift"; sourceTree = "<group>"; };
+		DD5CDF2D23ECC68F00C36648 /* SequenceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceState.swift; sourceTree = "<group>"; };
+		DD5CDF2F23ECD3D800C36648 /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
+		DD5CDF3323ECD48D00C36648 /* ExecutionSequenceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionSequenceError.swift; sourceTree = "<group>"; };
+		DD5CDF3B23ECD5C100C36648 /* ExecutionSequencerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExecutionSequencerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD5CDF3D23ECD5C100C36648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD5CDF3F23ECD5C100C36648 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DD5CDF4123ECD5C100C36648 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD5CDF4423ECD5C100C36648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD5CDF4623ECD5C400C36648 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD5CDF4923ECD5C400C36648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD5CDF4B23ECD5C400C36648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD5CDF4F23ECDAEE00C36648 /* SomeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeAction.swift; sourceTree = "<group>"; };
 		DDD2534B23ECA28C00282162 /* ExecutionSequencer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExecutionSequencer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD2534E23ECA28C00282162 /* ExecutionSequencer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExecutionSequencer.h; sourceTree = "<group>"; };
 		DDD2534F23ECA28C00282162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +62,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DD5CDF3823ECD5C100C36648 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DDD2534823ECA28C00282162 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,11 +87,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD5CDF3623ECD50C00C36648 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				DD5CDF2D23ECC68F00C36648 /* SequenceState.swift */,
+				DD5CDF3323ECD48D00C36648 /* ExecutionSequenceError.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
+		DD5CDF3C23ECD5C100C36648 /* ExecutionSequencerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				DD5CDF3D23ECD5C100C36648 /* AppDelegate.swift */,
+				DD5CDF3F23ECD5C100C36648 /* SceneDelegate.swift */,
+				DD5CDF4123ECD5C100C36648 /* ViewController.swift */,
+				DD5CDF4F23ECDAEE00C36648 /* SomeAction.swift */,
+				DD5CDF4323ECD5C100C36648 /* Main.storyboard */,
+				DD5CDF4623ECD5C400C36648 /* Assets.xcassets */,
+				DD5CDF4823ECD5C400C36648 /* LaunchScreen.storyboard */,
+				DD5CDF4B23ECD5C400C36648 /* Info.plist */,
+			);
+			path = ExecutionSequencerDemo;
+			sourceTree = "<group>";
+		};
 		DDD2534123ECA28C00282162 = {
 			isa = PBXGroup;
 			children = (
 				DDD2534D23ECA28C00282162 /* ExecutionSequencer */,
 				DDD2535823ECA28C00282162 /* ExecutionSequencerTests */,
+				DD5CDF3C23ECD5C100C36648 /* ExecutionSequencerDemo */,
 				DDD2534C23ECA28C00282162 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +126,7 @@
 			children = (
 				DDD2534B23ECA28C00282162 /* ExecutionSequencer.framework */,
 				DDD2535423ECA28C00282162 /* ExecutionSequencerTests.xctest */,
+				DD5CDF3B23ECD5C100C36648 /* ExecutionSequencerDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,7 +135,13 @@
 			isa = PBXGroup;
 			children = (
 				DDD2534E23ECA28C00282162 /* ExecutionSequencer.h */,
+				DD5CDF2323ECBC4D00C36648 /* ExecutionSequenceable.swift */,
+				DD5CDF2923ECBEE900C36648 /* ExecutionSequenceIterator.swift */,
+				DD5CDF2B23ECC5B200C36648 /* ExecutionSequenceIterator+DebugOutputStrategy.swift */,
+				DD5CDF2523ECBC8900C36648 /* Typealiases.swift */,
+				DD5CDF3623ECD50C00C36648 /* Enums */,
 				DDD2534F23ECA28C00282162 /* Info.plist */,
+				DD5CDF2F23ECD3D800C36648 /* TODO.swift */,
 			);
 			path = ExecutionSequencer;
 			sourceTree = "<group>";
@@ -100,6 +169,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		DD5CDF3A23ECD5C100C36648 /* ExecutionSequencerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD5CDF4C23ECD5C400C36648 /* Build configuration list for PBXNativeTarget "ExecutionSequencerDemo" */;
+			buildPhases = (
+				DD5CDF3723ECD5C100C36648 /* Sources */,
+				DD5CDF3823ECD5C100C36648 /* Frameworks */,
+				DD5CDF3923ECD5C100C36648 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExecutionSequencerDemo;
+			productName = ExecutionSequencerDemo;
+			productReference = DD5CDF3B23ECD5C100C36648 /* ExecutionSequencerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		DDD2534A23ECA28C00282162 /* ExecutionSequencer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDD2535F23ECA28C00282162 /* Build configuration list for PBXNativeTarget "ExecutionSequencer" */;
@@ -146,8 +232,12 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Monica Rondón";
 				TargetAttributes = {
+					DD5CDF3A23ECD5C100C36648 = {
+						CreatedOnToolsVersion = 11.3;
+					};
 					DDD2534A23ECA28C00282162 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					DDD2535323ECA28C00282162 = {
 						CreatedOnToolsVersion = 11.3;
@@ -169,11 +259,22 @@
 			targets = (
 				DDD2534A23ECA28C00282162 /* ExecutionSequencer */,
 				DDD2535323ECA28C00282162 /* ExecutionSequencerTests */,
+				DD5CDF3A23ECD5C100C36648 /* ExecutionSequencerDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DD5CDF3923ECD5C100C36648 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD5CDF4A23ECD5C400C36648 /* LaunchScreen.storyboard in Resources */,
+				DD5CDF4723ECD5C400C36648 /* Assets.xcassets in Resources */,
+				DD5CDF4523ECD5C100C36648 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DDD2534923ECA28C00282162 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -191,10 +292,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DD5CDF3723ECD5C100C36648 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD5CDF4223ECD5C100C36648 /* ViewController.swift in Sources */,
+				DD5CDF5023ECDAEE00C36648 /* SomeAction.swift in Sources */,
+				DD5CDF3E23ECD5C100C36648 /* AppDelegate.swift in Sources */,
+				DD5CDF4023ECD5C100C36648 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DDD2534723ECA28C00282162 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD5CDF3423ECD48D00C36648 /* ExecutionSequenceError.swift in Sources */,
+				DD5CDF2A23ECBEE900C36648 /* ExecutionSequenceIterator.swift in Sources */,
+				DD5CDF2623ECBC8900C36648 /* Typealiases.swift in Sources */,
+				DD5CDF2423ECBC4D00C36648 /* ExecutionSequenceable.swift in Sources */,
+				DD5CDF2E23ECC68F00C36648 /* SequenceState.swift in Sources */,
+				DD5CDF2C23ECC5B200C36648 /* ExecutionSequenceIterator+DebugOutputStrategy.swift in Sources */,
+				DD5CDF3023ECD3D800C36648 /* TODO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +335,62 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		DD5CDF4323ECD5C100C36648 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD5CDF4423ECD5C100C36648 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DD5CDF4823ECD5C400C36648 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD5CDF4923ECD5C400C36648 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		DD5CDF4D23ECD5C400C36648 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4DHQU43U3E;
+				INFOPLIST_FILE = ExecutionSequencerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.notmoniapps.ExecutionSequencerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD5CDF4E23ECD5C400C36648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4DHQU43U3E;
+				INFOPLIST_FILE = ExecutionSequencerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.notmoniapps.ExecutionSequencerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DDD2535D23ECA28C00282162 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -340,6 +514,7 @@
 		DDD2536023ECA28C00282162 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4DHQU43U3E;
@@ -356,6 +531,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.notmoniapps.ExecutionSequencer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +540,7 @@
 		DDD2536123ECA28C00282162 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4DHQU43U3E;
@@ -388,6 +565,7 @@
 		DDD2536323ECA28C00282162 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4DHQU43U3E;
 				INFOPLIST_FILE = ExecutionSequencerTests/Info.plist;
@@ -406,6 +584,7 @@
 		DDD2536423ECA28C00282162 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4DHQU43U3E;
 				INFOPLIST_FILE = ExecutionSequencerTests/Info.plist;
@@ -424,6 +603,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DD5CDF4C23ECD5C400C36648 /* Build configuration list for PBXNativeTarget "ExecutionSequencerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD5CDF4D23ECD5C400C36648 /* Debug */,
+				DD5CDF4E23ECD5C400C36648 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DDD2534523ECA28C00282162 /* Build configuration list for PBXProject "ExecutionSequencer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

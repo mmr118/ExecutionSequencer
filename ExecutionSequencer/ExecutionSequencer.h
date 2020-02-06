@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double ExecutionSequencerVersionNumber;
 FOUNDATION_EXPORT const unsigned char ExecutionSequencerVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ExecutionSequencer/PublicHeader.h>
-
-
