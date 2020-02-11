@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         
         for index in 0...5 {
             
-            let someAction = SomeAction(shouldBypass: false, delay: 2, num: index)
+            let someAction = ObjectSequenceable(shouldBypass: false, delay: 2, num: index)
             someAction.controller = self
             
             iterator.append { completionBlock in

@@ -11,146 +11,69 @@ import XCTest
 
 class ExecutionSequencerTests: XCTestCase {
 
+    var executionSequenceIteratorUT: ExecutionSequenceIterator!
+
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        self.executionSequenceIteratorUT = ExecutionSequenceIterator()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.executionSequenceIteratorUT = nil
+        super.tearDown()
     }
 
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+        setupSequenceIterator(5, skippedIndices: [3,4])
 
-}
-
-// EXAMPLE
-
-class FooAction: NSObject, ExecutionSequenceProtocol {
-
-    var dismissCompletionBlock: ESCompletionBlock?
-
-    var firstPass = false
-
-    let message: String
-    var shouldBypassSequence: Bool
-
-    init(_ message: String, shouldBypassSequence: Bool = false) {
-        self.message = message
-        self.shouldBypassSequence = shouldBypassSequence
-        super.init()
-    }
-
-    func performSequenceAction(_ block: @escaping ESCompletionBlock) {
-        dismissCompletionBlock = block
-        sequenceAction()
-    }
-
-    private func sequenceAction() {
-
-        let timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
-
-            if self.firstPass == false {
-                self.firstPass = true
-            } else {
-                timer.invalidate()
-                print(">> " + self.message)
-                self.dismissCompletionBlock?()
-            }
-        }
-
-        timer.fire()
+        executionSequenceIteratorUT.perform()
 
     }
 
 }
 
+// MARK: - Helpers
+extension ExecutionSequencerTests {
 
-class FooClass {
+    private func makeSequenceableObjects(_ count: UInt, skippedIndices: UInt...) -> [ObjectSequenceable] {
+        makeSequenceableObjects(count, skippedIndices: skippedIndices)
+    }
 
-    func foo() {
+    private func makeSequenceableObjects(_ count: UInt, skippedIndices: [UInt] = []) -> [ObjectSequenceable] {
+        let endIndex = count - 1
+        var mutableSkippedInicesSet = Set(skippedIndices)
+        var results = [ObjectSequenceable]()
+        for index in 0...endIndex {
+            let shouldSkip = mutableSkippedInicesSet.remove(index) != nil
+            let objSeq = ObjectSequenceable("Object \(index)", shouldBypassSequence: shouldSkip)
+            results.append(objSeq)
+        }
 
+        return results
+    }
 
-        let excSeq = ExecutionSequenceIterator()
+    private func setupSequenceIterator(_ count: UInt, skippedIndices: UInt...) {
+        let objects = makeSequenceableObjects(count, skippedIndices: skippedIndices)
+        fillIterator(with: objects)
+    }
 
-        let action1 = FooAction("action1")
-        let action2 = FooAction("action2", shouldBypassSequence: true)
-        let action3 = FooAction("action3")
-        let action4 = FooAction("action4")
+    private func setupSequenceIterator(_ count: UInt, skippedIndices: [UInt] = []) {
+        let objects = makeSequenceableObjects(count, skippedIndices: skippedIndices)
+        fillIterator(with: objects)
+    }
 
-
-        let block: ESBlock = { _ in }
-
-        excSeq.append(block)
-
-
-        excSeq.append { (completionBlock) in
-
-            let action = action1
-
-            if action.shouldBypassSequence {
-                print("shouldBypassSequence - \(action.message)")
-                completionBlock()
-            } else {
-                action.performSequenceAction(completionBlock)
-
+    private func fillIterator(with objects: [ObjectSequenceable]) {
+        for object in objects {
+            executionSequenceIteratorUT.append { completionBlock in
+                if object.shouldBypassSequence {
+                    completionBlock()
+                } else {
+                    object.performSequenceAction(completionBlock)
+                }
             }
 
         }
-
-        excSeq.append { (completionBlock) in
-
-            let action = action2
-
-            if action.shouldBypassSequence {
-                print("shouldBypassSequence - \(action.message)")
-                completionBlock()
-            } else {
-                action.performSequenceAction(completionBlock)
-
-            }
-
-        }
-
-        excSeq.append { (completionBlock) in
-
-            let action = action3
-
-            if action.shouldBypassSequence {
-                print("shouldBypassSequence - \(action.message)")
-                completionBlock()
-            } else {
-                action.performSequenceAction(completionBlock)
-
-            }
-
-        }
-
-        excSeq.append { (completionBlock) in
-
-            let action = action4
-
-            if action.shouldBypassSequence {
-                print("shouldBypassSequence - \(action.message)")
-                completionBlock()
-            } else {
-                action.performSequenceAction(completionBlock)
-
-            }
-
-        }
-
-        excSeq.perform()
-
     }
 
 }

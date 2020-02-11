@@ -15,7 +15,7 @@ extension ExecutionSequenceIterator {
     
     private func _performBlock(at index: Int) {
 
-        let aBlock = sequenceBlocks.remove(at: index) // sequenceBlocks[index]
+//        let aBlock = sequenceBlocks.remove(at: index) // sequenceBlocks[index]
         
         // .....
         // Remove blocks from seuencesBlocks and always pop first?

@@ -9,7 +9,7 @@
 import ExecutionSequencer
 import UIKit
 
-class SomeAction: NSObject, ExecutionSequenceable {
+class ObjectSequenceable: NSObject, ExecutionSequenceable {
     
     var shouldBypassSequence: Bool
     private(set) var dismissCompletionBlock: ExecutionSequenceable.CompletionBlock?
