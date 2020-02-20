@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,23 +16,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXR-yi-Hub">
-                                <rect key="frame" x="164" y="432" width="86" height="42"/>
+                                <rect key="frame" x="163.5" y="432" width="87" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Perform"/>
+                                <state key="normal" title="Execute"/>
                                 <connections>
-                                    <action selector="performSequence" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="nqk-ma-KQM"/>
+                                    <action selector="performSequence:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="pr8-6L-pgf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWd-cF-EfL">
+                                <rect key="frame" x="146" y="504" width="122" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Execute Alt"/>
+                                <connections>
+                                    <action selector="performSequence:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="oR8-0l-rYW"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLJ-yp-8gH">
+                                <rect key="frame" x="0.0" y="319" width="414" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oPx-6Y-Fcb">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                        <subviews>
+                                            <view tag="9" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfy-6U-IKi">
+                                                <rect key="frame" x="0.0" y="0.0" width="205" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <view tag="9" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDJ-n1-rXz">
+                                                <rect key="frame" x="209" y="0.0" width="205" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="oPx-6Y-Fcb" firstAttribute="leading" secondItem="uLJ-yp-8gH" secondAttribute="leading" id="Ann-yp-q5e"/>
+                                    <constraint firstItem="oPx-6Y-Fcb" firstAttribute="top" secondItem="uLJ-yp-8gH" secondAttribute="top" id="Zc2-cs-KEg"/>
+                                    <constraint firstAttribute="trailing" secondItem="oPx-6Y-Fcb" secondAttribute="trailing" id="psf-Df-AJN"/>
+                                    <constraint firstAttribute="bottom" secondItem="oPx-6Y-Fcb" secondAttribute="bottom" id="rXu-AT-Htv"/>
+                                    <constraint firstAttribute="height" constant="60" id="x8d-aT-Inp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="eXR-yi-Hub" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4fZ-iC-SiH"/>
+                            <constraint firstItem="hWd-cF-EfL" firstAttribute="top" secondItem="eXR-yi-Hub" secondAttribute="bottom" constant="30" id="Hja-2z-3eL"/>
+                            <constraint firstItem="hWd-cF-EfL" firstAttribute="centerX" secondItem="eXR-yi-Hub" secondAttribute="centerX" id="PCK-8d-Fgx"/>
+                            <constraint firstItem="uLJ-yp-8gH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="275" id="Ttx-DW-nlf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uLJ-yp-8gH" secondAttribute="trailing" id="Wap-Px-16t"/>
                             <constraint firstItem="eXR-yi-Hub" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="YxJ-SY-nz5"/>
+                            <constraint firstItem="uLJ-yp-8gH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ewL-20-6S2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="altButton" destination="hWd-cF-EfL" id="F1q-hP-Knl"/>
                         <outlet property="button" destination="eXR-yi-Hub" id="7b5-4F-NSg"/>
+                        <outlet property="sequenceStack" destination="oPx-6Y-Fcb" id="s9M-bl-Tp1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

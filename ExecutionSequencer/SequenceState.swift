@@ -8,9 +8,18 @@
 
 import Foundation
 
-public enum SequenceState: String {
+@objc public enum SequenceState: Int, CaseIterable {
     case empty
     case ready
-    case isPerforming
-    case didPerform
+    case isExecuting
+    case didExecute
+
+    public var stringValue: String {
+        switch self {
+        case .empty: return "empty"
+        case .ready: return "ready"
+        case .isExecuting: return "isPerforming"
+        case .didExecute: return "didPerform"
+        }
+    }
 }

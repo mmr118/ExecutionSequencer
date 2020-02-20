@@ -8,110 +8,134 @@
 
 import Foundation
 
-public class ExecutionSequenceIterator: NSObject {
-        
-    public var count: UInt { return UInt(sequenceBlocks.count) }
-    
-    public internal(set) var state: SequenceState
-    
-    internal var sequenceBlocks: [ExecutionSequenceable.Block] = []
+@objc public class ExecutionSequenceIterator: NSObject {
 
-    public override init() {
+    @objc public internal(set) var state: SequenceState {
+        didSet { state = (oldValue == .didExecute) ? oldValue : state }
+    }
+
+    internal var sequenceBlocks: [ExecutionSequenceable.SequenceBlock] = []
+
+    @objc public override init() {
         self.state = .empty
         super.init()
     }
+
+}
+
+
+// MARK: - Public
+public extension ExecutionSequenceIterator {
     
-    public func append(_ block: @escaping ExecutionSequenceable.Block) {
-        guard canUpdateSequenceBlock() else { errorHandler(.blockIsPerforming); return }
+    @objc func append(_ block: @escaping ExecutionSequenceable.SequenceBlock) {
+        guard canUpdateSequenceBlock() else { errorHandler(.blockIsExecuting); return }
         
         displayDebugMessage("Adding block to sequence")
 
         if state == .empty {
             state = .ready
         }
+
         sequenceBlocks.append(block)
     }
-    
+
     @discardableResult
-    public func removeBlock(at index: Int) -> ExecutionSequenceable.Block? {
+    @objc func removeBlock(at index: Int) -> ExecutionSequenceable.SequenceBlock? {
         guard canUpdateSequenceBlock() else { return nil }
         guard sequenceBlocks.indices.contains(index) else { return nil }
         
         displayDebugMessage("Removing block at index: \(index)")
         
         let removedBlock = sequenceBlocks.remove(at: index)
+
         if sequenceBlocks.isEmpty {
             state = .empty
         }
+
         return removedBlock
     }
     
     @discardableResult
-    public func removeLastBlock() -> ExecutionSequenceable.Block? {
+    @objc func removeLastBlock() -> ExecutionSequenceable.SequenceBlock? {
         guard canUpdateSequenceBlock() else { return nil }
-        
+        guard sequenceBlocks.last != nil else { return nil }
+
         displayDebugMessage("Removing last block")
         
         let removedBlock = sequenceBlocks.removeLast()
+
         if sequenceBlocks.isEmpty {
             state = .empty
         }
+
         return removedBlock
     }
     
     @discardableResult
-    public func removeFirstBlock() -> ExecutionSequenceable.Block? {
+    @objc func removeFirstBlock() -> ExecutionSequenceable.SequenceBlock? {
         guard canUpdateSequenceBlock() else { return nil }
-        
+        guard sequenceBlocks.first != nil else { return nil }
+
         displayDebugMessage("Removing first block")
         
         let removedBlock = sequenceBlocks.removeFirst()
+
         if sequenceBlocks.isEmpty {
             state = .empty
         }
+
         return removedBlock
     }
     
     @discardableResult
-    public func removeAllBlocks() -> [ExecutionSequenceable.Block] {
+    func removeAllBlocks() -> [ExecutionSequenceable.SequenceBlock] {
         guard canUpdateSequenceBlock() else { return [] }
         let currentBlocks = sequenceBlocks
+
         state = .empty
+
         sequenceBlocks.removeAll()
+
         return currentBlocks
     }
 
-    
-        
-    public func perform() {
-        
-        guard state == .ready else { return }
+    @objc func execute() {
 
-        displayDebugMessage("Performing Sequences")
-
-        state = .isPerforming
-        performBlock(at: 0)
+        if state == .ready {
+            displayDebugMessage("Executing Sequences")
+            state = .isExecuting
+            performBlock(at: 0)
+        }
         
     }
-    
+
 }
 
-// MARK: - Private
-extension ExecutionSequenceIterator {
+
+// MARK: - Internal
+internal extension ExecutionSequenceIterator {
     
-    internal func canUpdateSequenceBlock() -> Bool {
+    func canUpdateSequenceBlock() -> Bool {
         switch state {
-        case .ready, .empty: return true
-        case .isPerforming:
-            errorHandler(.blockIsPerforming)
+        case .ready, .empty:
+            return true
+
+        case .isExecuting:
+            errorHandler(.blockIsExecuting)
             return false
-        case .didPerform:
-            errorHandler(.blockHasAlreadyPerformed)
+
+        case .didExecute:
+            errorHandler(.blockHasAlreadyexecuted)
             return false
         }
     }
-    
-    private func performBlock(at index: Int) {
+
+}
+
+// MARK: - Private
+private extension ExecutionSequenceIterator {
+
+    func performBlock(at index: Int) {
 
         let aBlock = sequenceBlocks[index]
 
@@ -120,7 +144,7 @@ extension ExecutionSequenceIterator {
 
         aBlock {
 
-            self.displayDebugMessage("Block at \(index) executed completion function")
+            self.displayDebugMessage("Block at \(index) executed; completion function")
 
             let nextIndex = index + 1
 
@@ -132,9 +156,10 @@ extension ExecutionSequenceIterator {
 
                 self.displayDebugMessage("ExecutionSequence Complete")
 
-                self.state = .didPerform
+                self.state = .didExecute
 
             }
+
         }
     }
     

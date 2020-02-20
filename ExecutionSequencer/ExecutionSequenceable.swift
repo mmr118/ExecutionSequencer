@@ -8,10 +8,23 @@
 
 import Foundation
 
-public protocol ExecutionSequenceable: NSObjectProtocol {
-    
-    var shouldBypassSequence: Bool { get }
-    var dismissCompletionBlock: CompletionBlock? { get }
-    func performSequenceAction(_ block: @escaping CompletionBlock)
-    
+@objc public protocol ExecutionSequenceable: NSObjectProtocol {
+
+    @objc optional var name: String { get }
+
+    @objc var shouldBypass: Bool { get }
+    @objc var handoffBlock: HandoffBlock? { get set }
+
+    @objc func executeSequenceAction(_ handoffBlock: @escaping HandoffBlock)
+
+}
+
+public extension ExecutionSequenceable {
+
+    func handoffBlockIfNeeded() {
+        if self.handoffBlock != nil {
+            self.handoffBlock?()
+            self.handoffBlock = nil
+        }
+    }
 }

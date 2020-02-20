@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9716162C23F2C2EB003A2643 /* ObjectSequenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716162B23F2C2EB003A2643 /* ObjectSequenceable.swift */; };
+		978AAD6123FEB88C0012B758 /* ExecutionSequencer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD2534B23ECA28C00282162 /* ExecutionSequencer.framework */; };
+		978AAD6223FEB88C0012B758 /* ExecutionSequencer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDD2534B23ECA28C00282162 /* ExecutionSequencer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		978AAD6823FEC7C10012B758 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978AAD6723FEC7C10012B758 /* SceneDelegate.swift */; };
 		DD5CDF2423ECBC4D00C36648 /* ExecutionSequenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF2323ECBC4D00C36648 /* ExecutionSequenceable.swift */; };
 		DD5CDF2623ECBC8900C36648 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF2523ECBC8900C36648 /* Typealiases.swift */; };
 		DD5CDF2A23ECBEE900C36648 /* ExecutionSequenceIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF2923ECBEE900C36648 /* ExecutionSequenceIterator.swift */; };
@@ -16,18 +19,24 @@
 		DD5CDF3023ECD3D800C36648 /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF2F23ECD3D800C36648 /* TODO.swift */; };
 		DD5CDF3423ECD48D00C36648 /* ExecutionSequenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF3323ECD48D00C36648 /* ExecutionSequenceError.swift */; };
 		DD5CDF3E23ECD5C100C36648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF3D23ECD5C100C36648 /* AppDelegate.swift */; };
-		DD5CDF4023ECD5C100C36648 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF3F23ECD5C100C36648 /* SceneDelegate.swift */; };
 		DD5CDF4223ECD5C100C36648 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF4123ECD5C100C36648 /* ViewController.swift */; };
 		DD5CDF4523ECD5C100C36648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5CDF4323ECD5C100C36648 /* Main.storyboard */; };
 		DD5CDF4723ECD5C400C36648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD5CDF4623ECD5C400C36648 /* Assets.xcassets */; };
 		DD5CDF4A23ECD5C400C36648 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5CDF4823ECD5C400C36648 /* LaunchScreen.storyboard */; };
-		DD5CDF5023ECDAEE00C36648 /* SomeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF4F23ECDAEE00C36648 /* SomeAction.swift */; };
+		DD5CDF5023ECDAEE00C36648 /* ObjectSequenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CDF4F23ECDAEE00C36648 /* ObjectSequenceable.swift */; };
 		DDD2535523ECA28C00282162 /* ExecutionSequencer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD2534B23ECA28C00282162 /* ExecutionSequencer.framework */; };
 		DDD2535A23ECA28C00282162 /* ExecutionSequencerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD2535923ECA28C00282162 /* ExecutionSequencerTests.swift */; };
 		DDD2535C23ECA28C00282162 /* ExecutionSequencer.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD2534E23ECA28C00282162 /* ExecutionSequencer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		978AAD6323FEB88C0012B758 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDD2534223ECA28C00282162 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDD2534A23ECA28C00282162;
+			remoteInfo = ExecutionSequencer;
+		};
 		DDD2535623ECA28C00282162 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DDD2534223ECA28C00282162 /* Project object */;
@@ -37,8 +46,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		978AAD6523FEB88C0012B758 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				978AAD6223FEB88C0012B758 /* ExecutionSequencer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9716162B23F2C2EB003A2643 /* ObjectSequenceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSequenceable.swift; sourceTree = "<group>"; };
+		978AAD6723FEC7C10012B758 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DD5CDF2323ECBC4D00C36648 /* ExecutionSequenceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionSequenceable.swift; sourceTree = "<group>"; };
 		DD5CDF2523ECBC8900C36648 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		DD5CDF2923ECBEE900C36648 /* ExecutionSequenceIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionSequenceIterator.swift; sourceTree = "<group>"; };
@@ -48,13 +72,12 @@
 		DD5CDF3323ECD48D00C36648 /* ExecutionSequenceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionSequenceError.swift; sourceTree = "<group>"; };
 		DD5CDF3B23ECD5C100C36648 /* ExecutionSequencerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExecutionSequencerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5CDF3D23ECD5C100C36648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD5CDF3F23ECD5C100C36648 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DD5CDF4123ECD5C100C36648 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD5CDF4423ECD5C100C36648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD5CDF4623ECD5C400C36648 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD5CDF4923ECD5C400C36648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD5CDF4B23ECD5C400C36648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD5CDF4F23ECDAEE00C36648 /* SomeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeAction.swift; sourceTree = "<group>"; };
+		DD5CDF4F23ECDAEE00C36648 /* ObjectSequenceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSequenceable.swift; sourceTree = "<group>"; };
 		DDD2534B23ECA28C00282162 /* ExecutionSequencer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExecutionSequencer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD2534E23ECA28C00282162 /* ExecutionSequencer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExecutionSequencer.h; sourceTree = "<group>"; };
 		DDD2534F23ECA28C00282162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				978AAD6123FEB88C0012B758 /* ExecutionSequencer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +113,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		978AAD6023FEB88C0012B758 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		978AAD6623FEB8EF0012B758 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD5CDF4623ECD5C400C36648 /* Assets.xcassets */,
+				DD5CDF4823ECD5C400C36648 /* LaunchScreen.storyboard */,
+				DD5CDF4323ECD5C100C36648 /* Main.storyboard */,
+				DD5CDF4B23ECD5C400C36648 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		DD5CDF3623ECD50C00C36648 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +143,11 @@
 		DD5CDF3C23ECD5C100C36648 /* ExecutionSequencerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DD5CDF3D23ECD5C100C36648 /* AppDelegate.swift */,
-				DD5CDF3F23ECD5C100C36648 /* SceneDelegate.swift */,
 				DD5CDF4123ECD5C100C36648 /* ViewController.swift */,
-				DD5CDF4F23ECDAEE00C36648 /* SomeAction.swift */,
-				DD5CDF4323ECD5C100C36648 /* Main.storyboard */,
-				DD5CDF4623ECD5C400C36648 /* Assets.xcassets */,
-				DD5CDF4823ECD5C400C36648 /* LaunchScreen.storyboard */,
-				DD5CDF4B23ECD5C400C36648 /* Info.plist */,
+				DD5CDF4F23ECDAEE00C36648 /* ObjectSequenceable.swift */,
+				DD5CDF3D23ECD5C100C36648 /* AppDelegate.swift */,
+				978AAD6723FEC7C10012B758 /* SceneDelegate.swift */,
+				978AAD6623FEB8EF0012B758 /* Resources */,
 			);
 			path = ExecutionSequencerDemo;
 			sourceTree = "<group>";
@@ -120,6 +159,7 @@
 				DDD2535823ECA28C00282162 /* ExecutionSequencerTests */,
 				DD5CDF3C23ECD5C100C36648 /* ExecutionSequencerDemo */,
 				DDD2534C23ECA28C00282162 /* Products */,
+				978AAD6023FEB88C0012B758 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,10 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				DDD2534E23ECA28C00282162 /* ExecutionSequencer.h */,
+				DD5CDF2523ECBC8900C36648 /* Typealiases.swift */,
 				DD5CDF2323ECBC4D00C36648 /* ExecutionSequenceable.swift */,
 				DD5CDF2923ECBEE900C36648 /* ExecutionSequenceIterator.swift */,
 				DD5CDF2B23ECC5B200C36648 /* ExecutionSequenceIterator+DebugOutputStrategy.swift */,
-				DD5CDF2523ECBC8900C36648 /* Typealiases.swift */,
 				DD5CDF3623ECD50C00C36648 /* Enums */,
 				DDD2534F23ECA28C00282162 /* Info.plist */,
 				DD5CDF2F23ECD3D800C36648 /* TODO.swift */,
@@ -179,10 +219,12 @@
 				DD5CDF3723ECD5C100C36648 /* Sources */,
 				DD5CDF3823ECD5C100C36648 /* Frameworks */,
 				DD5CDF3923ECD5C100C36648 /* Resources */,
+				978AAD6523FEB88C0012B758 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				978AAD6423FEB88C0012B758 /* PBXTargetDependency */,
 			);
 			name = ExecutionSequencerDemo;
 			productName = ExecutionSequencerDemo;
@@ -300,9 +342,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD5CDF4223ECD5C100C36648 /* ViewController.swift in Sources */,
-				DD5CDF5023ECDAEE00C36648 /* SomeAction.swift in Sources */,
+				DD5CDF5023ECDAEE00C36648 /* ObjectSequenceable.swift in Sources */,
 				DD5CDF3E23ECD5C100C36648 /* AppDelegate.swift in Sources */,
-				DD5CDF4023ECD5C100C36648 /* SceneDelegate.swift in Sources */,
+				978AAD6823FEC7C10012B758 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +374,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		978AAD6423FEB88C0012B758 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDD2534A23ECA28C00282162 /* ExecutionSequencer */;
+			targetProxy = 978AAD6323FEB88C0012B758 /* PBXContainerItemProxy */;
+		};
 		DDD2535723ECA28C00282162 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DDD2534A23ECA28C00282162 /* ExecutionSequencer */;
@@ -366,6 +413,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4DHQU43U3E;
 				INFOPLIST_FILE = ExecutionSequencerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,6 +432,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4DHQU43U3E;
 				INFOPLIST_FILE = ExecutionSequencerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

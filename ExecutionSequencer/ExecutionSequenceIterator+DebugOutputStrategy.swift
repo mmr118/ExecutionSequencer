@@ -8,18 +8,18 @@
 
 import Foundation
 
-extension ExecutionSequenceIterator {
+public extension ExecutionSequenceIterator {
     
-    public private(set) static var debugOutputStrategy: DebugOutputStrategy = .none
+    private(set) static var debugOutputStrategy: DebugOutputStrategy = .none
     
     private var debugOutputHandler: DebugStrategyHandler? { return ExecutionSequenceIterator.debugOutputStrategy.handler }
 
-    public enum DebugOutputStrategy {
+    enum DebugOutputStrategy {
         case none
         case print
         case other(DebugStrategyHandler)
 
-        public var handler: DebugStrategyHandler? {
+        var handler: DebugStrategyHandler? {
             switch self {
             case .none: return nil
             case .print: return { Swift.print($0) }
@@ -29,29 +29,33 @@ extension ExecutionSequenceIterator {
 
     }
     
-    public static func setDebugStrategy(_ strategy: DebugOutputStrategy) {
+    static func setDebugStrategy(_ strategy: DebugOutputStrategy) {
         debugOutputStrategy = strategy
     }
     
-    public func setDebugStrategy(_ strategy: DebugOutputStrategy) {
+    func setDebugStrategy(_ strategy: DebugOutputStrategy) {
         ExecutionSequenceIterator.setDebugStrategy(strategy)
     }
+
+}
+
+internal extension ExecutionSequenceIterator {
     
     @discardableResult
-    internal func errorHandler(_ error: ExecutionSequenceError) -> Error {
+     func errorHandler(_ error: ExecutionSequenceError) -> Error {
         displayDebugMessage(error.localizedDescription)
         assertionFailure()
         return error
     }
     
     @discardableResult
-    internal func errorHandler(_ error: Error) -> Error {
+     func errorHandler(_ error: Error) -> Error {
         displayDebugMessage(error.localizedDescription)
         assertionFailure()
         return error
     }
         
-    internal func displayDebugMessage(_ item: Any) {
+     func displayDebugMessage(_ item: Any) {
 
         DispatchQueue.main.async {
             self.debugOutputHandler?(item)

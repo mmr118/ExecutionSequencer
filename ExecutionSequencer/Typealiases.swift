@@ -9,14 +9,10 @@
 import Foundation
 
 public extension ExecutionSequenceable {
-    
-    typealias CompletionBlock = () -> Void
-    typealias Block = (@escaping CompletionBlock) -> Void
-    
+    typealias HandoffBlock = () -> Void
+    typealias SequenceBlock = (@escaping HandoffBlock) -> Void
 }
 
 public extension ExecutionSequenceIterator {
-    
     typealias DebugStrategyHandler = (Any) -> Void
-
 }

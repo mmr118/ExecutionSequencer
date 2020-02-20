@@ -22,8 +22,8 @@ extension ExecutionSequenceIterator {
 
     }
     
-    private func append_Err(_ block: @escaping ExecutionSequenceable.Block) throws {
-        guard canUpdateSequenceBlock() else { throw errorHandler(.blockIsPerforming) }
+    private func append_Err(_ block: @escaping ExecutionSequenceable.SequenceBlock) throws {
+        guard canUpdateSequenceBlock() else { throw errorHandler(.blockIsExecuting) }
         
         displayDebugMessage("Adding block to sequence")
 
@@ -35,8 +35,8 @@ extension ExecutionSequenceIterator {
     }
     
     @discardableResult
-    private func removeBlock_Err(at index: Int) throws -> ExecutionSequenceable.Block? {
-        guard canUpdateSequenceBlock() else { throw errorHandler(.blockIsPerforming) }
+    private func removeBlock_Err(at index: Int) throws -> ExecutionSequenceable.SequenceBlock? {
+        guard canUpdateSequenceBlock() else { throw errorHandler(.blockIsExecuting) }
         guard sequenceBlocks.indices.contains(index) else { return nil }
         let removedBlock = sequenceBlocks.remove(at: index)
         if sequenceBlocks.isEmpty {
@@ -46,8 +46,8 @@ extension ExecutionSequenceIterator {
     }
     
     @discardableResult
-    private func removeLastBlock_Err() throws -> ExecutionSequenceable.Block? {
-        guard canUpdateSequenceBlock() else { throw errorHandler(.blockIsPerforming) }
+    private func removeLastBlock_Err() throws -> ExecutionSequenceable.SequenceBlock? {
+        guard canUpdateSequenceBlock() else { throw errorHandler(.blockIsExecuting) }
         let removedBlock = sequenceBlocks.removeLast()
         if sequenceBlocks.isEmpty {
             state = .empty
@@ -56,8 +56,8 @@ extension ExecutionSequenceIterator {
     }
     
     @discardableResult
-    private func removeFirstBlock_Err() throws -> ExecutionSequenceable.Block? {
-        guard canUpdateSequenceBlock() else { throw errorHandler(.blockIsPerforming) }
+    private func removeFirstBlock_Err() throws -> ExecutionSequenceable.SequenceBlock? {
+        guard canUpdateSequenceBlock() else { throw errorHandler(.blockIsExecuting) }
         let removedBlock = sequenceBlocks.removeFirst()
         if sequenceBlocks.isEmpty {
             state = .empty
@@ -66,8 +66,8 @@ extension ExecutionSequenceIterator {
     }
     
     @discardableResult
-    private func removeAllBlocks_Err() throws -> [ExecutionSequenceable.Block] {
-        guard canUpdateSequenceBlock() else { throw errorHandler(.blockIsPerforming) }
+    private func removeAllBlocks_Err() throws -> [ExecutionSequenceable.SequenceBlock] {
+        guard canUpdateSequenceBlock() else { throw errorHandler(.blockIsExecuting) }
         let currentBlocks = sequenceBlocks
         state = .empty
         sequenceBlocks.removeAll()
